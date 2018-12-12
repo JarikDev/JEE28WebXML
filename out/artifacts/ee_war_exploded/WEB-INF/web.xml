@@ -141,6 +141,11 @@
             <url-pattern>/jsp/Page.jsp</url-pattern>
             <include-coda>/jsp/Footer.jsp</include-coda>
         </jsp-property-group>
+
+        <taglib>
+            <taglib-uri>/tld/MyTagDescriptor.tld</taglib-uri>
+            <taglib-location>/tld/MyTagDescriptor.tld</taglib-location>
+        </taglib>
     </jsp-config>
 
     <login-config>
@@ -195,6 +200,15 @@
         <url-pattern>/myfilter</url-pattern>
         <dispatcher>REQUEST</dispatcher>
     </filter-mapping>
+
+    <listener>
+        <listener-class>jsp.ContextListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>jsp.ContextAttributeListener</listener-class>
+    </listener>
+
+
 
 </web-app>
 
